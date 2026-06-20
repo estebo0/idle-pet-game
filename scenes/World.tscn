@@ -12,8 +12,8 @@ texture = ExtResource("4_world")
 texture_repeat = 2
 centered = false
 region_enabled = true
-region_rect = Rect2(16, 96, 480, 854)
-scale = Vector2(1, 1)
+region_rect = Rect2(336, 400, 16, 16)
+scale = Vector2(30, 54)
 
 [node name="Player" parent="." instance=ExtResource("1_world")]
 position = Vector2(240, 150)
