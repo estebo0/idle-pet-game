@@ -2,9 +2,10 @@ extends Node2D
 
 const SPEED = 180.0
 const FOLLOW_DISTANCE = 60.0
-const ATTACK_RANGE = 80.0
-const ATTACK_DAMAGE = 1
+const ATTACK_RANGE = 200.0
 const ATTACK_COOLDOWN = 0.8
+
+const PROJECTILE_SCENE = preload("res://scenes/Projectile.tscn")
 
 var target: Node2D = null
 var attack_timer: float = 0.0
@@ -18,14 +19,21 @@ func _process(delta: float) -> void:
 	var nearest_enemy = _get_nearest_enemy()
 
 	if nearest_enemy != null and position.distance_to(nearest_enemy.position) <= ATTACK_RANGE:
-		# Atacar al enemigo más cercano
+		# Disparar al enemigo más cercano
 		if attack_timer <= 0.0:
-			nearest_enemy.take_damage(ATTACK_DAMAGE)
+			_shoot(nearest_enemy)
 			attack_timer = ATTACK_COOLDOWN
-	elif target != null and position.distance_to(target.position) > FOLLOW_DISTANCE:
-		# Seguir al jugador si no hay enemigos cerca
+
+	# Siempre seguir al jugador manteniendo distancia
+	if target != null and position.distance_to(target.position) > FOLLOW_DISTANCE:
 		var direction = (target.position - position).normalized()
 		position += direction * SPEED * delta
+
+func _shoot(enemy: Node2D) -> void:
+	var proj = PROJECTILE_SCENE.instantiate()
+	proj.position = position
+	proj.direction = (enemy.position - position).normalized()
+	get_parent().add_child(proj)
 
 func _get_nearest_enemy() -> Node2D:
 	var enemies = get_tree().get_nodes_in_group("enemies")
