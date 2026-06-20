@@ -3,8 +3,9 @@ extends Node2D
 const SPEED = 150.0
 
 func _process(delta: float) -> void:
-	position.x += SPEED * delta
+	position.y += SPEED * delta
 
-	var screen_width = get_viewport_rect().size.x
-	if position.x > screen_width + 50:
-		position.x = -50
+	# Al salir por abajo vuelve por arriba
+	var screen_height = get_viewport_rect().size.y
+	if position.y > screen_height + 50:
+		position.y = -50

@@ -9,15 +9,15 @@
 [node name="Background" type="ColorRect" parent="."]
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 480.0
+offset_bottom = 854.0
 color = Color(0.13, 0.2, 0.1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_world")]
-position = Vector2(100, 324)
+position = Vector2(240, 150)
 
 [node name="Pet" parent="." instance=ExtResource("2_world")]
-position = Vector2(40, 324)
+position = Vector2(240, 220)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("3_world")
