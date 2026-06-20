@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://world00001"]
+[gd_scene load_steps=3 format=3 uid="uid://world00001"]
 
 [ext_resource type="PackedScene" uid="uid://b1player00001" path="res://scenes/Player.tscn" id="1_world"]
+[ext_resource type="PackedScene" uid="uid://pet00001" path="res://scenes/Pet.tscn" id="2_world"]
 
 [node name="World" type="Node2D"]
 
@@ -13,3 +14,6 @@ color = Color(0.13, 0.2, 0.1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_world")]
 position = Vector2(100, 324)
+
+[node name="Pet" parent="." instance=ExtResource("2_world")]
+position = Vector2(40, 324)
