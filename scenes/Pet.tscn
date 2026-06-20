@@ -1,20 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://pet00001"]
+[gd_scene load_steps=3 format=3 uid="uid://pet00001"]
 
 [ext_resource type="Script" path="res://scripts/Pet.gd" id="1_pet"]
+[ext_resource type="Texture2D" path="res://assets/sprites/creatures3_.png" id="2_pet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pet"]
+atlas = ExtResource("2_pet")
+region = Rect2(240, 0, 40, 40)
 
 [node name="Pet" type="Node2D"]
 script = ExtResource("1_pet")
 
-[node name="Body" type="ColorRect" parent="."]
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
-color = Color(1, 0.4, 0.1, 1)
-
-[node name="Eyes" type="ColorRect" parent="."]
-offset_left = 4.0
-offset_top = -5.0
-offset_right = 10.0
-offset_bottom = 1.0
-color = Color(0.1, 0.1, 0.1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_pet")
+scale = Vector2(2, 2)
