@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://lobby00001"]
+
+[ext_resource type="Script" path="res://scripts/Lobby.gd" id="1_lobby"]
+[ext_resource type="PackedScene" uid="uid://b1player00001" path="res://scenes/Player.tscn" id="2_lobby"]
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_lobby")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 480.0
+offset_bottom = 854.0
+color = Color(0.08, 0.12, 0.22, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+text = "Idle Pet"
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 200.0
+offset_right = 480.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+text = "Adventure"
+
+[node name="Player" parent="." instance=ExtResource("2_lobby")]
+position = Vector2(240, 480)
+
+[node name="EnterButton" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 680.0
+offset_right = 360.0
+offset_bottom = 740.0
+theme_override_font_sizes/font_size = 22
+text = "Aventura!"
