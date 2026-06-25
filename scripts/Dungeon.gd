@@ -3,7 +3,7 @@ extends Node2D
 @export var difficulty: int = 1
 
 func _ready() -> void:
-	$EnemySpawner.difficulty = difficulty
+	$EnemySpawner.difficulty = GameManager.current_difficulty
 	$HUD/BackButton.pressed.connect(_on_back_pressed)
 	GameManager.coins_changed.connect(_on_coins_changed)
 	$HUD/CoinLabel.text = "🪙 %d" % GameManager.coins
