@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://far24b5cnei7"]
+
+[ext_resource type="Script" path="res://scripts/DungeonSelect.gd" id="1_ds"]
+
+[node name="DungeonSelect" type="Node2D"]
+script = ExtResource("1_ds")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 480.0
+offset_bottom = 854.0
+color = Color(0.08, 0.08, 0.15, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 80.0
+offset_right = 480.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+text = "Seleccionar Mazmorra"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 420.0
+offset_bottom = 680.0
+theme_override_constants/separation = 30
+
+[node name="Dungeon1" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+theme_override_font_sizes/font_size = 20
+text = "🌿 Mazmorra 1 - Bosque
+Dificultad: Fácil
+Enemigos débiles, pocos"
+
+[node name="Dungeon2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+theme_override_font_sizes/font_size = 20
+text = "💀 Mazmorra 2 - Cripta
+Dificultad: Media
+Más enemigos, más vida"
+
+[node name="Dungeon3" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+theme_override_font_sizes/font_size = 20
+text = "🔥 Mazmorra 3 - Infierno
+Dificultad: Difícil
+Enemigos rápidos y fuertes"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 16
+text = "< Volver"
