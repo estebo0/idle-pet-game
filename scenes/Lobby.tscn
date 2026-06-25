@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="Player" parent="." instance=ExtResource("2_lobby")]
 position = Vector2(240, 600)
